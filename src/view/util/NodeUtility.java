@@ -1,6 +1,10 @@
 package view.util;
 
 public class NodeUtility {
+	
+	/**
+	 * COORDINATE[i] gives the coordinates of a node
+	 */
 	public static final int[][] COORDINATE = {
 			{ 0, 0 }, // index = 0
 			{ 3, 0 }, // index = 1
@@ -32,13 +36,13 @@ public class NodeUtility {
 	 * INDEX[x][y] gives the index of the node at (x,y). Empty coordinates like (1,0) give -1.  
 	 */
 	public static final int[][] INDEX = {
-			{  0, -1, -1,  1, -1, -1,  2},
-			{ -1,  3, -1,  4, -1,  5, -1},
-			{ -1, -1,  6,  7,  8, -1, -1},
-			{  9, 10, 11, -1, 12, 13, 14},
-			{ -1, -1, 15, 16, 17, -1, -1},
-			{ -1, 18, -1, 19, -1, 20, -1},
-			{ 21, -1, -1, 22, -1, -1, 23},
+			{  0, -1, -1,  9, -1, -1, 21},
+			{ -1,  3, -1, 10, -1, 18, -1},
+			{ -1, -1,  6, 11, 15, -1, -1},
+			{  1,  4,  7, -1, 16, 19, 2},
+			{ -1, -1,  8, 12, 17, -1, -1},
+			{ -1,  5, -1, 13, -1, 20, -1},
+			{  2, -1, -1, 14, -1, -1, 23},
 	};
 
 }
