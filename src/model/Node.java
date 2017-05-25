@@ -5,22 +5,19 @@ import java.util.List;
 import java.util.Optional;
 
 public class Node {
-	int x;
-	int y;
+	int index;
 	List<Node> neighbours;
 	
 	public Optional<Piece> occupant;
 	
-	public Node(int x, int y) {
-		this.x = x;
-		this.y = y;
+	public Node(int x) {
+		this.index = x;
 		neighbours = new LinkedList<>();
 	}
 	
 	
 	@Override
 	public boolean equals(Object o) {
-		Node other = (Node) o;
-		return this.x == other.x && this.y == other.y;
+		return this.index == ((Node) o).index;
 	}
 }
