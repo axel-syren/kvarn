@@ -1,6 +1,10 @@
 package view.util;
 
 public class NodeUtility {
+	
+	/**
+	 * COORDINATE[i] gives the coordinates of a node
+	 */
 	public static final int[][] COORDINATE = {
 			{ 0, 0 }, // index = 0
 			{ 3, 0 }, // index = 1
