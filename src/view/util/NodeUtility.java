@@ -27,5 +27,18 @@ public class NodeUtility {
 			{ 3, 6 }, // index = 22
 			{ 6, 6 }, // index = 23
 	};
+	
+	/**
+	 * INDEX[x][y] gives the index of the node at (x,y). Empty coordinates like (1,0) give -1.  
+	 */
+	public static final int[][] INDEX = {
+			{  0, -1, -1,  1, -1, -1,  2},
+			{ -1,  3, -1,  4, -1,  5, -1},
+			{ -1, -1,  6,  7,  8, -1, -1},
+			{  9, 10, 11, -1, 12, 13, 14},
+			{ -1, -1, 15, 16, 17, -1, -1},
+			{ -1, 18, -1, 19, -1, 20, -1},
+			{ 21, -1, -1, 22, -1, -1, 23},
+	};
 
 }
