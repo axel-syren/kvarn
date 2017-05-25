@@ -1,9 +1,12 @@
-
+import model.Node;
+import model.Piece;
 
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Hello world!");
+		Node n = new Node(0,0);
+		Piece p = new Piece(Piece.WHITE);
+		System.out.println(n.occupant);
 	}
 
 }
