@@ -26,4 +26,13 @@ public class Mill {
 	public Optional<Boolean> getOwner() {
 		return nodes[1].occupant.map( (Piece p) -> p.color);
 	}
+	
+	/**
+	 * Returns true if one of the nodes in this mill contains n
+	 * @param n
+	 * @return
+	 */
+	public boolean contains(Node n) {
+		return nodes[0].equals(n) || nodes[1].equals(n) || nodes[2].equals(n);
+	}
 }
