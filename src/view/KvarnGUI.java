@@ -30,6 +30,12 @@ public class KvarnGUI extends Application{
 	        boardPane.setVgap(10);
 	        boardPane.setHgap(10);
 	        
+	        ToggleButton node;
+	        
+	        for (int i = 0; i < board.nodes.length; i++) {
+	        	node = new ToggleButton();
+	        	
+	        }
 	        	        
 	        ToggleButton node0 = new ToggleButton();
 	        node0.setOnAction(new EventHandler<ActionEvent>() {	 
