@@ -7,55 +7,54 @@ import javafx.scene.Scene;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import model.Board;
+import view.util.NodeUtility;
 
 public class KvarnGUI extends Application{
-	 public static void main(String[] args) {
-	        launch(args);
-	    }
-	    
-	    @Override
-	    public void start(Stage primaryStage) {
-	        primaryStage.setTitle("Kvarn");
-	        Pane pane = new Pane();
-	        Scene scene = new Scene(pane, 1000, 800);
-	        
-	        Board board = new Board();
-	        
-	        GridPane boardPane = new GridPane();
-	        boardPane.setLayoutX(100);
-	        boardPane.setLayoutY(100);
-	        boardPane.setVgap(10);
-	        boardPane.setHgap(10);
-	        
-	        ToggleButton node;
-	        
-	        for (int i = 0; i < board.nodes.length; i++) {
-	        	node = new ToggleButton();
-	        	
-	        }
-	        	        
-	        ToggleButton node0 = new ToggleButton();
-	        node0.setOnAction(new EventHandler<ActionEvent>() {	 
-	            @Override
-	            public void handle(ActionEvent event) {
-	                if (node0.isSelected()) {
-	                	System.out.println("pusspådig!");
-	                } else {
-	                	System.out.println("eller kram!");
-	                }
-	            }
-	        });
+	public static void main(String[] args) {
+		launch(args);
+	}
 
-	        boardPane.add(node0, 2, 4);
-	        
-	        pane.getChildren().addAll(boardPane);
-	        primaryStage.setScene(scene);
-	        primaryStage.setResizable(false);
-	        primaryStage.show();
-	        
+	@Override
+	public void start(Stage primaryStage) {
+		primaryStage.setTitle("Kvarn");
+		Pane pane = new Pane();
+		Scene scene = new Scene(pane, 1000, 800);
 
-	    }
+		Board board = new Board();
+
+		GridPane boardPane = new GridPane();
+		boardPane.setLayoutX(100);
+		boardPane.setLayoutY(100);
+		boardPane.setVgap(10);
+		boardPane.setHgap(10);
+
+
+		for (int i = 0; i < board.nodes.length; i++) {
+			final ToggleButton node = new ToggleButton();
+			final int[] coord = NodeUtility.COORDINATE[i];
+			boardPane.add(node, coord[0], coord[1]);
+			
+			node.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					if (node.isSelected()) {
+						System.out.println("Selected " + coord[0] + " " + coord[1]);
+					} else {
+						System.out.println("Not selected " + coord[0] + " " + coord[1]);
+					}
+				}
+			});
+		}
+
+
+
+		pane.getChildren().addAll(boardPane);
+		primaryStage.setScene(scene);
+		primaryStage.setResizable(false);
+		primaryStage.show();
+
+
+	}
 }
